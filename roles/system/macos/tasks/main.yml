@@ -1,0 +1,24 @@
+---
+
+  - name          : "Close any open System Preferences panes"
+    command       : "osascript -e 'tell application \"System Preferences\" to quit'"
+    changed_when  : false
+    ignore_errors : True
+
+  - name         : 'macos : set preferences ( standard )'
+    include_role : name=lafarer.osx-defaults allow_duplicates=False
+
+  - name         : "macos : set preferences ( custom )"
+    osx_defaults : 
+
+      host   : "{{ item.defaults.host | default('false') }}"
+      domain : "{{ item.defaults.domain }}"
+      key    : "{{ item.defaults.key }}"
+      type   : "{{ item.defaults.type }}"
+      value  : "{{ item.defaults.value }}"
+      state  : present
+
+    with_items   : "{{ osx_defaults_write.values() }}"
+    loop_control :
+      label : "{{ item.name | default('') }}"
+    notify       : killall

@@ -1,0 +1,15 @@
+---
+
+- hosts      : localhost
+  connection : local
+
+  pre_tasks :
+      - name : Ensure host is running macOS
+        fail : msg="The host (target) system is not running macOS."
+        when : ansible_os_family != "Darwin"
+        tags : always
+
+  roles : 
+
+    - { role : profile/all,       tags: [ "profile-default"   ] }
+    - { role : profile/developer, tags: [ "profile-developer" ] }

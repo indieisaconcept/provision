@@ -1,0 +1,42 @@
+---
+
+- name       : install node & nvm
+  homebrew   : name={{ item }} state=present
+  with_items :
+    - nvm
+    - node
+  notify : brew cleanup
+
+- name : create nvm directory
+  file : path={{ nvm_dir }} state=directory
+
+- name    : copy nvm-exec to NVM's working directory
+  shell   : cp $(brew --prefix nvm)/nvm-exec {{ nvm_dir }} creates="{{ nvm_dir }}/nvm-exec"
+
+- name       : install other node versions via nvm
+  shell      : >
+    . {{ dotfiles_dest }}/bashrc.node.sh; nvm install {{ item }}
+    creates={{ nvm_dir }}/versions/*/{{ item }}
+  with_items : "{{ node_versions }}"
+  when       : node_versions is defined
+
+# we need to check the current alias so that a fact can
+# be created to ensure we do not set the alias again
+
+- command       : cat {{ nvm_dir }}/alias/default
+  register      : nvm_alias_default
+  changed_when  : false
+  ignore_errors : True
+
+- set_fact   :
+    nvm_alias_default : "{{ nvm_alias_default.stdout }}"
+
+- name  : set the default node version
+  shell : >
+    . {{ dotfiles_dest }}/bashrc.node.sh; nvm alias default {{ default_node_version }}
+  when  : nvm_alias_default != "{{ default_node_version }}"
+
+- name       : install global npm packages
+  npm        : name={{ item.name }} version={{ item.version | default('latest') }} global=true state=present
+  with_items : "{{ node_packages }}"
+  when       : node_packages is defined

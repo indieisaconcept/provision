@@ -1,0 +1,4 @@
+---
+
+dotfiles_dest : "{{ ansible_env.HOME }}/.dotfiles"
+nvm_dir       : "{{ ansible_env.HOME }}/.nvm/"

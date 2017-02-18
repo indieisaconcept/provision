@@ -1,0 +1,3 @@
+---
+
+wallpaper_path : "{{ playbook_dir }}/files/wallpaper/default.jpg"

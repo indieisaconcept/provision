@@ -1,0 +1,78 @@
+---
+
+dotfiles_link :
+
+    - { src : hyper.js }
+    - { src : zshrc    }
+
+    - { src : atom/init.coffee   }
+    - { src : atom/config.cson   }
+    - { src : atom/keymap.cson   }
+    - { src : atom/packages.cson }
+    - { src : atom/snippets.cson }
+    - { src : atom/styles.less   }
+
+# specify which applications should
+# appear in the dock
+
+dock_apps :
+
+  - Atom.app
+  - Hyper.app
+  - Docker.app
+  - SourceTree.app
+  - Google Chrome.app
+  - Spotify.app
+  - Sonos.app
+  - System Preferences.app
+
+node_versions :
+
+  - v4.3.0
+  - v4.4.6
+
+# packages which should be installed
+# globally with system version of node
+
+node_packages :
+
+  - { name : pure-prompt }
+  - { name : autocannon  }
+  - { name : http-server }
+  - { name : npm-check   }
+  - { name : serverless  }
+
+# cli apps and applications for only this
+# user
+
+cli_list :
+
+  - thefuck
+
+applications_list :
+
+  - alfred
+  - hyper
+  - spotify
+  - sonos
+  - flux
+  - box-sync
+  - monodraw
+  - spectacle
+  - stay
+  - crashplan
+
+mas_installed_apps :
+
+  - { id: 766939888, name: "1Keyboard (2.6)"     }
+  - { id: 972359186, name: "RedisServer (1.0)"   }
+  - { id: 688211836, name: "EasyRes (1.1.1)"     }
+  - { id: 403388562, name: "Transmit (4.4.11)"   }
+  - { id: 918858936, name: "Airmail 3 (3.2.1)"   }
+  - { id: 497799835, name: "Xcode (8.2.1)"       }
+  - { id: 409201541, name: "Pages (6.0.5)"       }
+  - { id: 494803304, name: "WiFi Explorer (2.2)" }
+  - { id: 409183694, name: "Keynote (7.0.5)"     }
+  - { id: 405772121, name: "LittleIpsum (2.0.6)" }
+  - { id: 409789998, name: "Twitter (4.2.4)"     }
+  - { id: 445264274, name: "Camouflage"          }

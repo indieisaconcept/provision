@@ -1,0 +1,4 @@
+.DS_Store
+ansible.log
+roles/external
+*.retry

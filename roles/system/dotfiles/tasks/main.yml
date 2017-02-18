@@ -1,0 +1,17 @@
+---
+
+- name          : symlink dotfiles
+  file          : src={{ dotfiles_src }} dest={{ dotfiles_dest }} state=link force=yes
+  ignore_errors : yes
+
+- name       : create custom symlinks
+  file       : src={{ dotfiles_src }}/{{ item.src }} dest={{ ansible_env.HOME }}/{{ item.dest|default("." + item.src) }} state=link force=yes
+  with_items : "{{ dotfiles_link }}"
+
+- name : update profile
+  lineinfile : >
+    dest={{ ansible_env.HOME}}/.profile
+    regexp="^# load dotfiles"
+    line="# load dotfiles automatically ( managed via ansible )\nfor dotfile in ~/.dotfiles/bashrc.*; do source $dotfile; done"
+    state=present
+    create=true

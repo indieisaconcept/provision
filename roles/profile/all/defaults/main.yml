@@ -1,0 +1,30 @@
+---
+
+cli_list_all :
+
+  - wallpaper     # https://github.com/sindresorhus/macos-wallpaper
+  - m-cli         # https://github.com/rgcr/m-cli
+  - mas           # https://github.com/mas-cli/mas
+  - wifi-password # https://github.com/rauchg/wifi-password
+
+applications_list_all :
+
+  - slack
+  - google-chrome
+  - typora
+  - appcleaner
+  - the-unarchiver
+
+# https://github.com/sindresorhus/quick-look-plugins
+
+quick_look_plugins_list_all :
+
+  - betterzipql
+  - qlcolorcode
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - quicklook-csv
+  - quicklook-json
+  - suspicious-package
+  - webpquicklook

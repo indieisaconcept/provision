@@ -1,0 +1,20 @@
+---
+
+- name          : install wallpaper helper
+  homebrew      : name=wallpaper state=present
+  notify        : brew cleanup
+    
+- command       : wallpaper
+  register      : wallpaper_path_current
+  changed_when  : false
+  ignore_errors : True
+
+# store current wallpaper path as a fact to support
+# conditional setup
+
+- set_fact      :
+    wallpaper_path_current : "{{ wallpaper_path_current.stdout }}"
+
+- name          : set default wallpaper
+  command       : wallpaper {{ wallpaper_path }}
+  when          : wallpaper_path_current != "{{ wallpaper_path }}"

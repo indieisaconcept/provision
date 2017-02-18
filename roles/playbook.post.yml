@@ -1,0 +1,15 @@
+---
+
+- hosts      : localhost
+  connection : local
+
+  post_tasks :
+
+    - osx_say :
+        msg   : "Provision is complete"
+        voice : Fred
+      tags    : no_ci
+
+    - debug :
+        msg : "Some changes may not take effect until you've restarted your Mac."
+      tags  : always

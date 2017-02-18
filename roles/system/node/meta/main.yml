@@ -1,0 +1,19 @@
+---
+
+# credit : https://github.com/superlumic/ansible-role-node
+# decided to roll my own similar to the above but with some
+# tweaks
+
+galaxy_info :
+  author : indieisaconcept
+  description : Install node & nvm
+  license     : MIT
+  min_ansible_version : 1.2
+  platforms :
+    - name     : Darwin
+      versions :
+        - all
+  categories :
+    - system
+dependencies :
+  - danbohea.homebrew

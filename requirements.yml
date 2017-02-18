@@ -1,0 +1,22 @@
+---
+
+# Default requirements applicable to all users should be
+# added here
+
+# - src  : https://github.com/<username>/<project>.git
+#   name : some.name
+
+- src  : https://github.com/danbohea/ansible-role-homebrew
+  name : danbohea.homebrew
+
+- src  : https://github.com/danbohea/ansible-role-dock-items
+  name : danbohea.dock-items
+
+- src  : https://github.com/lafarer/ansible-role-osx-defaults
+  name : lafarer.osx-defaults
+
+- src  : https://github.com/geerlingguy/ansible-role-mas
+  name : geerlingguy.mas
+
+- src  : https://github.com/hnakamur/ansible-role-atom-packages
+  name : hnakamur.atom-packages

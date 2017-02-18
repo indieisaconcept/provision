@@ -1,0 +1,8 @@
+---
+
+- hosts      : localhost
+  connection : local
+
+- include    : roles/playbook.pre.yml
+- include    : "{{ cli_playbook_path }}"
+- include    : roles/playbook.post.yml

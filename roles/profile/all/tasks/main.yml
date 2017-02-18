@@ -1,0 +1,24 @@
+---
+
+- name          : install default cli tools for all "profile/all"
+  homebrew      : name={{ item }} state=present
+  with_items    : "{{ cli_list_all }}"
+  notify        : brew cleanup
+
+- name          : install default applications for "profile/all"
+  homebrew_cask : name={{ item }} state=present
+  with_items    : "{{ applications_list_all }}"
+  notify        : brew cask cleanup
+
+- name          : install default quicklook plugins for "profile/all"
+  homebrew_cask : name={{ item }} state=present
+  with_items    : "{{ quick_look_plugins_list_all }}"
+  notify        : brew cask cleanup
+
+- name          : load dotfiles
+  include_role  : name=system/dotfiles allow_duplicates=False
+  tags          : [ "user", "system", "system-dotfiles" ]
+
+- name          : load osx-defaults role
+  include_role  : name=system/macos allow_duplicates=False
+  tags          : [ "user", "system", "system-macos" ]

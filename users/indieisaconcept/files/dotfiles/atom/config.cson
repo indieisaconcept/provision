@@ -1,0 +1,49 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "fa7f81bd-8b3b-4032-9556-0b83e70581c1"
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "background-tips"
+      "language-gfm"
+    ]
+    packagesWithKeymapsDisabled: [
+      "navigate"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "seti-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "964a9fc2-819c-40ff-9881-809dfed2c355"
+  linter:
+    errorPanelHeight: 117
+    lintOnFlyInterval: 1000
+  "linter-jshint": {}
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  navigate:
+    f1: "http://devdocs.io/#q=&searchterm"
+    f10: "https://duckduckgo.com/?q=&searchterm"
+    f6: "http://www.bing.com/search?q=&searchterm"
+    newwindow: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
+    themeColor: "Steel"
+  "tool-bar": {}
+  "tree-view":
+    autoReveal: true
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false

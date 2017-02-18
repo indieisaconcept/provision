@@ -1,0 +1,32 @@
+---
+
+cli_list_developer :
+
+  - yarn
+  - go
+  - htop
+  - zsh
+  - zsh-completions
+  - shellcheck
+  - redis
+  - mongodb
+  - couchdb
+
+applications_list_developer :
+
+  - atom
+  - sublime-text
+  - medis
+  - robomongo
+  - docker
+  - kitematic
+  - gas-mask
+  - sourcetree
+  - kaleidoscope
+  - paw
+  - virtualbox
+  - graphiql
+  - dash
+
+atom_packages :
+    - package-sync

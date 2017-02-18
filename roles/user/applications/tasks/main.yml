@@ -1,0 +1,21 @@
+---
+
+- name          : install default cli tools for user
+  homebrew      : name={{ item }} state=present
+  with_items    : "{{ cli_list }}"
+  when          : cli_list is defined
+  notify        : brew cleanup
+
+- name          : install default applications for user
+  homebrew_cask : name={{ item }} state=present
+  with_items    : "{{ applications_list }}"
+  when          : applications_list is defined
+  notify        : brew cask cleanup
+
+- name          : load mac store role
+  include_role  : name=geerlingguy.mas allow_duplicates=False
+  tags          : [ "user-applications-mas" ]
+  when          :
+    - mas_installed_apps is defined
+    - mas_email|default("") != ""
+    - mas_password|default("") != ""

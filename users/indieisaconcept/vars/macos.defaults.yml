@@ -1,0 +1,146 @@
+
+################################################################################
+# UI/UX                                                                        #
+###############################################################################@
+
+osx_defaults_write :
+
+  applications :
+
+    # Photos
+    # --------------------------------------------------------------------------
+
+    - name     : "[APP/PHOTOS] Prevent Photos from opening automatically when devices are plugged in"
+      defaults :
+        domain : com.apple.ImageCapture
+        key    : disableHotPlug
+        type   : boolean
+        value  : true
+
+    # Printer
+    # --------------------------------------------------------------------------
+
+    - name     : "[APP/PRINTER] Automatically quit printer app once the print jobs complete"
+      defaults :
+        domain : com.apple.print.PrintingPrefs
+        key    : "Quit When Finished"
+        type   : boolean
+        value  : true
+
+    # Misc
+    # --------------------------------------------------------------------------
+
+    - name     : "[APP/MISC] Disable the \"Are you sure you want to open this application?\" dialog"
+      defaults :
+        domain : com.apple.LaunchServices
+        key    : LSQuarantine
+        type   : boolean
+        value  : false
+
+  uiux :
+
+    - name     : "[UI/UX] Disable transparency in the menu bar and elsewhere"
+      defaults :
+        domain : com.apple.universalaccess
+        key    : reduceTransparency
+        type   : boolean
+        value  : true
+
+    - name     : "[UI/UX] Increase window resize speed for Cocoa applications"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSWindowResizeTime
+        type   : float
+        value  : 0.001
+
+    - name     : "[UI/UX] Disable the over-the-top focus ring animation"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSUseAnimatedFocusRing
+        type   : bool
+        value  : false
+
+    # Save Dialog
+    # --------------------------------------------------------------------------
+
+    - name     : "[UI/UX] 1/2 Expand save panel by default"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSNavPanelExpandedStateForSaveMode
+        type   : boolean
+        value  : true
+
+    - name     : "[UI/UX] 2/2 Expand save panel by default"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSNavPanelExpandedStateForSaveMode2
+        type   : boolean
+        value  : true
+
+    # Print Dialog
+    # --------------------------------------------------------------------------
+
+    - name     : "[UI/UX] 1/2 Expand print panel by default"
+      defaults :
+        domain : NSGlobalDomain
+        key    : PMPrintingExpandedStateForPrint
+        type   : boolean
+        value  : true
+
+    - name     : "[UI/UX] 2/2 Expand print panel by default"
+      defaults :
+        domain : NSGlobalDomain
+        key    : PMPrintingExpandedStateForPrint2
+        type   : boolean
+        value  : true
+
+    - name     : "[UI/UX] Disable smart quotes as they’re annoying when typing code"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSAutomaticQuoteSubstitutionEnabled
+        type   : boolean
+        value  : false
+
+    - name     : "[UI/UX] Disable smart dashes as they’re annoying when typing code"
+      defaults :
+        domain : NSGlobalDomain
+        key    : NSAutomaticDashSubstitutionEnabled
+        type   : boolean
+        value  : false
+
+  input :
+
+    - name     : "[INPUT/TRACKPAD] Tap to click"
+      defaults :
+        domain : com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key    : Clicking
+        type   : int
+        value  : 1
+
+    - name     : "[INPUT/TRACKPAD] Tap with two fingers to emulate right click"
+      defaults :
+        domain : com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key    : TrackpadRightClick
+        type   : bool
+        value  : true
+
+    - name     : "[INPUT/TRACKPAD] Enable three finger tap (look up)"
+      defaults :
+        domain : com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key    : TrackpadThreeFingerTapGesture
+        type   : int
+        value  : 2
+
+    - name     : "[INPUT/TRACKPAD] Disable three finger drag"
+      defaults :
+        domain : com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key    : TrackpadThreeFingerDrag
+        type   : bool
+        value  : false
+
+    - name     : "[INPUT/TRACKPAD] Zoom in or out"
+      defaults :
+        domain : com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key    : TrackpadPinch
+        type   : int
+        value  : 1

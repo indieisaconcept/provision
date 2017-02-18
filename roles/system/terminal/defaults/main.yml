@@ -1,0 +1,5 @@
+---
+
+dotfiles_src  : "{{ playbook_dir }}/files/dotfiles"
+dotfiles_dest : "{{ ansible_env.HOME }}/.dotfiles"
+dotfiles_link : []

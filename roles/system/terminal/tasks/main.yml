@@ -1,0 +1,20 @@
+---
+
+- name : Install prezto from git.
+  git  :
+    repo : https://github.com/sorin-ionescu/prezto.git
+    dest : "{{ ansible_env.HOME}}/.zprezto/"
+    track_submodules : true
+    force  : true
+    update : false
+    clone  : yes
+
+- name : Install prezto dotfiles.
+  file :
+    src   : "{{ item }}"
+    dest  : "{{ ansible_env.HOME}}/.{{ item | basename }}"
+    state : link
+  with_fileglob : "{{ ansible_env.HOME}}/.zprezto/runcoms/*"
+  when          :
+    - item|basename != "README.md"
+    - item|basename != "zshrc"

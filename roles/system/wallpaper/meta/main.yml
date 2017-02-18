@@ -1,0 +1,14 @@
+---
+galaxy_info :
+  author : indieisaconcept
+  description : Set users wallpaper
+  license     : MIT
+  min_ansible_version : 1.2
+  platforms :
+    - name     : Darwin
+      versions :
+        - all
+  categories :
+    - system
+dependencies :
+  - danbohea.homebrew

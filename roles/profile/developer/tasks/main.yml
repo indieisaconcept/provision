@@ -1,0 +1,41 @@
+---
+
+# waiting upon : https://github.com/ansible/ansible/issues/21285
+#
+# - name          : load additional roles
+#   include_role  : name={{ item }} private=True
+#   with_items    : "{{ role_list }}"
+
+- name          : tap homebrew/services
+  homebrew_tap  : name=homebrew/{{ item }} state=present
+  with_items    :
+    - services
+    - versions
+  notify        : brew cleanup
+
+- name          : install default cli tools for "profile/developer"
+  homebrew      : name={{ item }} state=present
+  with_items    : "{{ cli_list_developer }}"
+  notify        : brew cask cleanup
+
+- name          : install default applications for "profile/developer"
+  homebrew_cask : name={{ item }} state=present
+  with_items    : "{{ applications_list_developer }}"
+  notify        : brew cask cleanup
+
+# additional roles to include
+
+- name          : setup terminal
+  include_role  : name=system/terminal allow_duplicates=False
+  tags          : [ "system", "system-terminal" ]
+
+- name          : load node role
+  include_role  : name=system/node allow_duplicates=False
+  tags          : [ "system", "system-node" ]
+
+- name          : load atom packages
+  include_role  : name=hnakamur.atom-packages allow_duplicates=False
+  vars          :
+    atom_packages_packages : "{{ atom_packages }}"
+  tags          : [ "user", "user-applications", "user-applications-atom" ]
+  when          : atom_packages is defined
