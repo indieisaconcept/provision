@@ -34,6 +34,7 @@
     f10: "https://duckduckgo.com/?q=&searchterm"
     f6: "http://www.bing.com/search?q=&searchterm"
     newwindow: true
+    openInSameWindow: false
   "package-sync":
     createOnChange: true
     forceOverwrite: true
