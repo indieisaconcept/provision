@@ -7,5 +7,5 @@ Inspired by [superlumic](https://github.com/superlumic/superlumic) & [macsible](
 ## usage
 
 ```shell
-git clone https://github.com/indieisaconcept.git ./provision && cd ./provision && ./init.sh <username>
+git clone https://github.com/indieisaconcept/provision.git ./provision && cd ./provision && ./init.sh <username>
 ```
