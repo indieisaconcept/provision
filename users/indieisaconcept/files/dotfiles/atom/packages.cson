@@ -36,7 +36,6 @@ packages: [
   "minimap"
   "monokai-seti"
   "multi-cursor"
-  "navigate"
   "open-recent"
   "package-sync"
   "satisfy-dependencies"
