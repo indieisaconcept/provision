@@ -7,6 +7,7 @@
     disabledPackages: [
       "background-tips"
       "language-gfm"
+      "linter-npm-missing"
     ]
     packagesWithKeymapsDisabled: [
       "navigate"
@@ -16,17 +17,16 @@
       "seti-ui"
       "one-dark-syntax"
     ]
+    titleBar: "custom"
   editor:
-    fontSize: 17
+    fontSize: 16
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
   "exception-reporting":
     userId: "964a9fc2-819c-40ff-9881-809dfed2c355"
-  linter:
-    errorPanelHeight: 117
-    lintOnFlyInterval: 500
+  linter: {}
   "linter-jshint": {}
   "markdown-preview-plus":
     useGitHubStyle: true
