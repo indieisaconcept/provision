@@ -16,8 +16,6 @@ applications_list_developer :
 
   - atom
   - sublime-text
-  - medis
-  - robomongo
   - docker
   - kitematic
   - gas-mask

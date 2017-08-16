@@ -54,13 +54,10 @@ applications_list :
   - alfred
   - hyper
   - spotify
-  - sonos
   - flux
   - box-sync
   - monodraw
   - spectacle
-  - stay
-  - crashplan
 
 mas_installed_apps :
 
