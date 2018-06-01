@@ -11,6 +11,7 @@ cli_list_developer :
   - redis
   - mongodb
   - couchdb
+  - git-extras
 
 applications_list_developer :
 
@@ -21,10 +22,9 @@ applications_list_developer :
   - gas-mask
   - sourcetree
   - kaleidoscope
-  - paw
-  - virtualbox
+  - insomnia
   - graphiql
   - dash
 
 atom_packages :
-    - package-sync
+  - package-sync

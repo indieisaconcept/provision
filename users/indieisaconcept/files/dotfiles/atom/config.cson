@@ -8,6 +8,8 @@
       "background-tips"
       "language-gfm"
       "linter-npm-missing"
+      "linter-elixirc"
+      "markdown-preview"
     ]
     packagesWithKeymapsDisabled: [
       "navigate"
@@ -19,15 +21,20 @@
     ]
     titleBar: "custom"
   editor:
-    fontSize: 16
+    fontSize: 15
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
   "exception-reporting":
     userId: "964a9fc2-819c-40ff-9881-809dfed2c355"
+  fonts:
+    fontFamily: "Hack"
+  "goto-definition":
+    performanceMode: true
   linter: {}
   "linter-jshint": {}
+  "linter-ui-default": {}
   "markdown-preview-plus":
     useGitHubStyle: true
   navigate:
@@ -41,6 +48,8 @@
     createOnChange: true
     forceOverwrite: true
   "platformio-ide-terminal":
+    core:
+      mapTerminalsTo: "Folder"
     style:
       theme: "one-dark"
     toggles:
@@ -50,7 +59,6 @@
     disableAnimations: true
     themeColor: "Steel"
   "tool-bar": {}
-  "tree-view":
-    autoReveal: true
+  "tree-view": {}
   welcome:
     showOnStartup: false

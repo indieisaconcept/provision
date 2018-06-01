@@ -21,8 +21,10 @@ module.exports = {
     // border color (window, tabs)
     borderColor: '#333',
 
-    // custom css to embed in the main window
-    css: '',
+	css: `
+	    .terminal:not(.focus)     { opacity: 1 !important }
+		.term_fit:not(.term_term) { opacity: 1 !important }
+	`,
 
     // custom css to embed in the terminal window
     termCSS: '',
@@ -67,7 +69,7 @@ module.exports = {
     bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
+    copyOnSelect: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -92,10 +94,10 @@ module.exports = {
   plugins: [
     'hyper-snazzy',
     'hyperterm-visor',
-    "hyperline",
-    "hypercwd",
-    "hyper-tab-icons",
-    "hyperterm-paste"
+    'hypercwd',
+    'hyper-tab-icons',
+    'hyperterm-paste',
+    'hyperlayout'
   ],
 
   // in development, you can create a directory under

@@ -19,8 +19,6 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 
-alias ap="cd /volumes/Documents/work/autopilot/projects"
-
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
