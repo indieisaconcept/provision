@@ -6,13 +6,6 @@
 #   include_role  : name={{ item }} private=True
 #   with_items    : "{{ role_list }}"
 
-- name          : tap homebrew/services
-  homebrew_tap  : name=homebrew/{{ item }} state=present
-  with_items    :
-    - services
-    - versions
-  notify        : brew cleanup
-
 - name          : install default cli tools for "profile/developer"
   homebrew      : name={{ item }} state=present
   with_items    : "{{ cli_list_developer }}"
