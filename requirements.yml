@@ -6,7 +6,7 @@
 # - src  : https://github.com/<username>/<project>.git
 #   name : some.name
 
-- src  : https://github.com/danbohea/ansible-role-homebrew
+- src  : https://github.com/indieisaconcept/ansible-role-homebrew
   name : danbohea.homebrew
 
 - src  : https://github.com/danbohea/ansible-role-dock-items
